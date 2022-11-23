@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content {
+    background-color: #ffffff;
+    /* background-image: url(/public/images/bg1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh; */
+    /* width: 100vw; */
+}
+
+.main-container {
+    padding: 40px 40px 0px 40px;
+    background-color: transparent;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.person-img {
+    width: 150px;
+    border-radius: 10px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.text-color {
+    color: rgb(36, 84, 168);
+    /* color: white; */
+}
+
+.heading {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+.roles-box {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.mid-heading {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.small-text {
+    font-weight: 400;
+    margin-left: 8px;
+    font-size: 20px;
+    /* color: white; */
+}
+
+
+
+
+.icons-container {
+    padding: 20px;
+    box-shadow: 5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff;
+    margin-top: 30px;
+    text-align: center;
+    max-width: 630px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.icons-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    transition: all 500ms ease;
+}
+
+.icons-row :hover {
+    background-color: rgb(215, 228, 245);
+}
+
+.icon-box {
+    border-radius: 8px;
+    margin: 10px;
+    box-shadow: 5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff;
+    background-color: #ffffff;
+    padding: 15px 15px 10px 15px;
+}
+
+.socialIcon {
+    width: 50px;
+    cursor: pointer;
+}
+
+.btn-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0px 60px 0px;
+
+}
+
+/* fancy button css */
+.button {
+    --offset: 10px;
+    --border-size: 2px;
+    display: block;
+    position: relative;
+    padding: 1.5em 3em;
+    appearance: none;
+    border: 0;
+    background: #ffffff;
+    /* color: #e55743; */
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 0;
+    box-shadow: inset 0 0 0 var(--border-size) currentcolor;
+    transition: background 0.8s ease;
+    margin: 0px 30px;
+}
+
+.button:hover {
+    background: rgba(100, 0, 0, .03);
+}
+
+.downloadBtn {
+    color: #e55743;
+}
+
+.contactBtn {
+    color: rgb(20, 82, 168);
+}
+
+.button__horizontal,
+.button__vertical {
+    position: absolute;
+    top: var(--horizontal-offset, 0);
+    right: var(--vertical-offset, 0);
+    bottom: var(--horizontal-offset, 0);
+    left: var(--vertical-offset, 0);
+    transition: transform 0.8s ease;
+    will-change: transform;
+}
+
+.button__horizontal::before,
+.button__vertical::before {
+    content: '';
+    position: absolute;
+    border: inherit;
+}
+
+.button__horizontal {
+    --vertical-offset: calc(var(--offset) * -1);
+    border-top: var(--border-size) solid currentcolor;
+    border-bottom: var(--border-size) solid currentcolor;
+}
+
+.button__horizontal::before {
+    top: calc(var(--vertical-offset) - var(--border-size));
+    bottom: calc(var(--vertical-offset) - var(--border-size));
+    left: calc(var(--vertical-offset) * -1);
+    right: calc(var(--vertical-offset) * -1);
+}
+
+.button:hover .button__horizontal {
+    transform: scaleX(0);
+}
+
+.button__vertical {
+    --horizontal-offset: calc(var(--offset) * -1);
+    border-left: var(--border-size) solid currentcolor;
+    border-right: var(--border-size) solid currentcolor;
+}
+
+.button__vertical::before {
+    top: calc(var(--horizontal-offset) * -1);
+    bottom: calc(var(--horizontal-offset) * -1);
+    left: calc(var(--horizontal-offset) - var(--border-size));
+    right: calc(var(--horizontal-offset) - var(--border-size));
+}
+
+.button:hover .button__vertical {
+    transform: scaleY(0);
+}
+
+/* fancy button css */
+
+
+
+
+
+@media screen and (max-width: 450px) {
+
+    .person-img {
+        width: 100px;
+    }
+
+    .main-container {
+        padding: 20px;
+    }
+
+    .icons-container {
+        width: 100%;
+        padding: 20px 0px;
+        padding: 10px;
+        margin-top: 15px;
+    }
+
+    .icon-box {
+        margin: 10px;
+        padding: 10px 10px 5px 10px;
+    }
+
+    .socialIcon {
+        width: 30px;
+        margin: 0px;
+    }
+
+
+
+    .heading {
+        font-size: 20px;
+    }
+
+    .roles-box {
+        margin-top: 10px;
+    }
+
+    .mid-heading {
+        font-size: 15px;
+    }
+
+    .small-text {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+
+    .btn-box {
+        margin-top: 15px;
+    }
+
+    .button {
+        --offset: 10px;
+        --border-size: 2px;
+        padding: 1.2em 1.8em;
+        letter-spacing: 1px;
+        margin: 0px 20px;
+        font-size: 10px;
+    }
+
+}
