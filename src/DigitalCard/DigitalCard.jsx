@@ -1,114 +1,139 @@
+import { useEffect, useState } from "react";
 import "./digitalCard.css";
 import Typecomp from "./Typecomp/Typecomp";
+import { useNavigate, useParams } from 'react-router-dom';
 
 const DigitalCard = () => {
 
-    const url = "https://trickysys.com/demo/digicards/index.php/Master/getCard";
+    const [path, setPath] = useState({});
+    const [user, setUser] = useState();
+    const [links, setLinks] = useState([]);
+    const [designations, setDesignations] = useState([]);
 
-    const data = {
-        "slug": "dr.hemantsonare"
-    }
+    const url = `https://trickysys.com/demo/digicards/index.php/Master/getCard`;
 
-    const options = {
-        method: "POST",
-        headers: new Headers({
-            'Content-type': "text/plain",
-        }),
-        body: JSON.stringify(data)
-    }
+    const Navigate = useNavigate();
 
-    // fetch(url, options)
-    // .then(res =>{
-    //     res.json().then((result) => {
-    //         console.warn(result);
-    //     })
-    // } )
+    const { id } = useParams();
 
-    
+    console.log(id)
+
+    useEffect(() => {
+
+        const data = {
+            "slug": id
+        }
+
+        const options = {
+            method: "POST",
+            headers: {
+                'Content-type': "text/plain",
+            },
+            body: JSON.stringify(data)
+        }
+
+
+        fetch(url, options)
+            .then(res => {
+                res.json().then((result) => {
+                    if(result.success === 0 ) {
+                        Navigate("/error")
+                    }else {
+                        setPath(result.imagepath)
+                        setUser(result.data)
+                        setLinks(result.data.links)
+                        setDesignations(result.data.designations)
+                    }
+                })
+            })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+
     return (
-        <div className="content">
+        <>
+        { user === undefined ? "" : 
+    
+                    <div className="content">
 
-            <div className="main-container">
+                        <div className="profileImgContainer">
+                            <img src="/images/bgOne.jpg" className="bg-img" alt="bg-img" />
+                        </div>
 
-                <div className="flex">
-                    <img className='person-img' src='images/person.jpg' alt='profile-pic' />
-                </div>
+                        <div className="shadow-box">
 
-                <h3 className='text-color heading '>Dr. Hemant Sonare</h3>
+                            <div className="main-container">
+
+                                {user !== undefined ?
+                                    <>
+                                        <div className="flex avatar-box">
+                                            <img className='person-img' src={`${path}image/${user.image}`} alt='profile-pic' />
+                                        </div>
+
+                                        <h3 className='text-color heading '> {user.name} </h3>
+                                    </>
+                                    : ""}
+
+                                {designations !== undefined ?
+                                    (designations.map((value) => {
+                                        return (
+                                            <div className="roles-box" key={value.id}>
+                                                <span className='text-color mid-heading'> {value.designation} -</span>
+                                                <span className='small-text'>{value.description}</span>
+                                            </div>
+                                        )
+                                    })
+                                    )
+                                    : ""
+                                }
+
+                                <div className='flex'>
+                                    <div className="icons-container">
+
+                                        <Typecomp />
+
+                                        <div className="icons-row">
+
+                                            {links !== undefined ? (
+                                                links.map((value) => {
+                                                    return (
+                                                        <div className="icon-box" key={value.id}>
+                                                            <a href={value.link} target="_blank" rel="noreferrer">
+                                                                <img src={`${path}types/${value.image}`} className="socialIcon" alt='social-icon' />
+                                                            </a>
+                                                        </div>
+                                                    )
+                                                })
+                                            ) : ""}
 
 
-                <div className="roles-box">
-                    <span className='text-color mid-heading'>Director -</span>
-                    <span className='small-text'>Wanjari Group of Institution, Nagpur.</span>
-                </div>
+                                        </div>
+                                    </div>
 
-                <div className="roles-box">
-                    <span className='text-color mid-heading'>President -</span>
-                    <span className='small-text'> Maharashtra Pradesh Congress Committee - Industry Cell.</span>
-                </div>
+                                </div>
 
-
-
-                <div className='flex'>
-                    <div className="icons-container">
-
-                        <Typecomp/>
-
-                        <div className="icons-row">
-                            <div className="icon-box">
-                                <img src='https://cdn-icons-png.flaticon.com/512/3256/3256013.png' className="socialIcon" alt='social-icon' />
                             </div>
-                            <div className="icon-box">
-                                <img src='https://cdn-icons-png.flaticon.com/512/3256/3256013.png' className="socialIcon" alt='social-icon' />
-                            </div>
-                            <div className="icon-box">
-                                <img src='https://cdn-icons-png.flaticon.com/512/3256/3256013.png' className="socialIcon" alt='social-icon' />
-                            </div>
-                            <div className="icon-box">
-                                <img src='https://cdn-icons-png.flaticon.com/512/3256/3256013.png' className="socialIcon" alt='social-icon' />
-                            </div>
-                            <div className="icon-box">
-                                <img src='https://cdn-icons-png.flaticon.com/512/3256/3256013.png' className="socialIcon" alt='social-icon' />
-                            </div>
-                            <div className="icon-box">
-                                <img src='https://cdn-icons-png.flaticon.com/512/3256/3256013.png' className="socialIcon" alt='social-icon' />
-                            </div>
-                            <div className="icon-box">
-                                <img src='https://cdn-icons-png.flaticon.com/512/3256/3256013.png' className="socialIcon" alt='social-icon' />
-                            </div>
-                            <div className="icon-box">
-                                <img src='https://cdn-icons-png.flaticon.com/512/3256/3256013.png' className="socialIcon" alt='social-icon' />
-                            </div>
-                            <div className="icon-box">
-                                <img src='https://cdn-icons-png.flaticon.com/512/3256/3256013.png' className="socialIcon" alt='social-icon' />
-                            </div>
-                            <div className="icon-box">
-                                <img src='https://cdn-icons-png.flaticon.com/512/3256/3256013.png' className="socialIcon" alt='social-icon' />
+
+                            <div className="btn-box">
+                                <button className="button downloadBtn">
+                                    Download Profile
+                                    <div className="button__horizontal"></div>
+                                    <div className="button__vertical"></div>
+                                </button>
+
+                                <button className="button contactBtn">
+                                    Save Contact
+                                    <div className="button__horizontal"></div>
+                                    <div className="button__vertical"></div>
+                                </button>
                             </div>
 
                         </div>
+
                     </div>
 
-                </div>
-
-            </div>
-
-            <div className="btn-box">
-
-                    <button className="button downloadBtn">
-                        Download Profile
-                        <div className="button__horizontal"></div>
-                        <div className="button__vertical"></div>
-                    </button>
-
-                    <button className="button contactBtn">
-                        Save Contact
-                        <div className="button__horizontal"></div>
-                        <div className="button__vertical"></div>
-                    </button>
-                </div> 
-
-        </div>
+                     }
+        </>
     )
 }
 
