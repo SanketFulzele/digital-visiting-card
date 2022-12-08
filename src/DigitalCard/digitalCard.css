@@ -4,6 +4,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 .content {
@@ -15,7 +16,7 @@
 }
 
 .shadow-box {
-    max-width: 100vw;
+    max-width: 95vw;
     padding: 25px 0px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
@@ -23,9 +24,10 @@
 .main-container {
     padding: 20px 70px 0px 70px;
     background-color: transparent;
+    margin-top: -25px;
 }
 
-/* bg Image Container */
+/* bg Image Container starts */
 .profileImgContainer {
     width: 100%;
     overflow: hidden;
@@ -47,7 +49,7 @@
     margin-top: -120px;
 }
 
-/* bg Image Container */
+/* bg Image Container ends */
 
 .flex {
     display: flex;
@@ -60,26 +62,35 @@
     border-radius: 50%;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     border: 5px solid white;
+    cursor: pointer;
 }
 
 .text-color {
-    color: rgb(36, 84, 168);
+    color: #2454a8;
 }
 
 .heading {
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     margin-top: 15px;
     font-weight: 700;
 }
 
+.roles-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .roles-box {
-    margin-top: 0px;
-    text-align: center;
+    width: 450px;
+    margin-top: 2px;
+    text-align: left;
 }
 
 .mid-heading {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
 }
 
@@ -95,7 +106,7 @@
 .icons-container {
     padding: 20px;
     box-shadow: 5px 5px 15px #D1D9E6, -5px -5px 15px #cecbcb;
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: center;
     max-width: 630px;
     display: flex;
@@ -136,7 +147,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 30px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 
 /* fancy button css */
@@ -150,6 +161,7 @@
     border: 0;
     background: #ffffff;
     /* color: #e55743; */
+    color: black !important;
     text-transform: uppercase;
     letter-spacing: 0.25em;
     outline: none;
@@ -161,25 +173,25 @@
     margin: 0px 30px;
 }
 
-.button:hover {
-    background: rgba(100, 0, 0, .03);
-}
-
 .downloadBtn {
-    /* color: #e55743; */
-    color: rgb(20, 82, 168);
+    color: rgb(0, 0, 0) !important;
+    background-color:  rgb(89, 145, 223);
 }
 
 .downloadBtn:hover {
     color: rgb(0, 0, 0);
+    background-color: transparent;
 }
 
 .contactBtn {
-    color: #e55743;
+    color: #000000 !important;
+    background-color: #ff786b;
+    /* background-color: #e55743; */
 }
 
 .contactBtn:hover {
     color: rgb(0, 0, 0);
+    background-color: transparent;
 }
 
 .button__horizontal,
@@ -236,7 +248,10 @@
 
 /* fancy button css */
 
-
+.modal-img {
+    width: 700px;
+    height: auto;
+}
 
 
 
@@ -304,15 +319,17 @@
     }
 
     .roles-box {
-        margin-top: 0px;
+        margin-top: 2px;
+        width: 315px;
+        text-align: left;
     }
 
     .mid-heading {
-        font-size: 15px;
+        font-size: 13px;
     }
 
     .small-text {
-        font-size: 15px;
+        font-size: 12px;
     }
 
     .btn-box {
@@ -327,5 +344,10 @@
         padding: 8px 10px;
         margin: 0px 20px;
         font-size: 10px;
+    }
+
+
+    .modal-img {
+        width: 350px;
     }
 }

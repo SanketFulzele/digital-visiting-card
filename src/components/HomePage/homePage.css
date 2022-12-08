@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
 .hero-container {
     width: 100%;
     height: 100vh;
@@ -13,15 +22,15 @@
 }
 
 .heading-sm {
-    margin-top: -40px;
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 1px;
-    color: rgb(227, 196, 154);
+    color: #e9ba63;
+    margin-top: 10px;
 }
 
 .heading-bg {
-    margin-top: 10px;
+    margin-top: -50px;
     font-size: 60px;
     color: rgb(255, 255, 255);
     text-align: center;
@@ -37,7 +46,7 @@
     align-items: center;
     justify-content: center;
     padding: 0px 50px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .content-box {
@@ -115,8 +124,8 @@
 
 
 .service-section {
-    background-color: #F9F7F3;
-    /* background-color: #38b3ad; */
+    /* background-color: #F9F7F3; */
+    background-color: white;
     padding: 50px;
 }
 
@@ -216,7 +225,7 @@
 @media screen and ( max-width: 1000px ) {
 
     .hero-container {
-        height: 50vh;
+        height: 70vh;
     }
 
     .content-box {
@@ -297,15 +306,15 @@
     }
 
     .about-box {
-        padding: 30px;
+        padding: 35px 20px;
     }
 
     .about-heading {
-        font-size: 25px;
+        font-size: 21px;
     }
 
     .about-subheading {
-        font-size: 18px;
+        font-size: 15px;
         margin-top: 10px;
     }
 

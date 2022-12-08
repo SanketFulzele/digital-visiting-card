@@ -1,15 +1,28 @@
 import React from 'react'
+import { Helmet } from 'react-helmet';
+import Contact from '../Contact/Contact';
 import Footer from '../Footer/Footer';
 import "./homePage.css";
 
 const HomePage = () => {
     return (
         <>
+            <Helmet>
+                <title> Meri Pahchaan | Digital Visiting Card</title>
+                <meta name="keyword" content="Digital Card | Make Digital Visiting Card Online | Meri Pahchaan | Trickysys | Digital Visiting Card Online" />
+                <meta name="description" content="Make Your Digital Visiting Cards Online" />
+                <meta name="author" content="Meri Pahchann | Make Digital Visiting Card Online" />
+                <meta property="og:title" content="Meri Pahchaan | Digital Visiting Card" />
+                <meta property="og:description" content="Make Your Digital Visiting Cards Online" />
+                <meta property="og:image" content="/images/trickyOne.png" />
+                <meta name="twitter:card" content="summary_large" />
+            </Helmet>
+
             <div>
 
                 <div className="hero-container">
-                    <h6 className='heading-sm'>TrickySys</h6>
                     <h3 className='heading-bg'> Make Your Own <br /> <span> Digital Visiting Card  </span></h3>
+                    <h6 className='heading-sm'>with meripahchaan.in</h6>
                 </div>
 
                 <div className="content-section">
@@ -24,22 +37,15 @@ const HomePage = () => {
                     </div>
                 </div>
 
-                <div className="about-section">
-                    <div className="about-box">
-                        <h1 className='about-heading'>Freedom From Boring Printed Business Cards</h1>
-                        <h4 className='about-subheading'>Design your digital visiting card in 2 minutes - it's easy, elegant and affordable. E-Visit Card is always in your pocket, never tears and never runs out. Your Digital Visiting Card can be easily updated with our user-friendly dashboard, so you won't need to re-print a business card again.</h4>
-                    </div>
-                </div>
 
                 <div className="service-section">
                     <div className="service-text-box">
                         <h1 className='service-heading'> Our digital business card platform makes designing a card simple, convenient, and reliable. </h1>
                     </div>
-
                     <div className="service-card-box">
                         <div className="service-card">
                             <div className="card-img-container">
-                                <img className='card-img' src="/images/TrickyQr.png" alt="QR_Code" />
+                                <img className='card-img' src="/images/qrcode.png" alt="QR_Code" />
                             </div>
                             <div className="card-text-container">
                                 <h1 className='card-heading'>Digital Visiting Card</h1>
@@ -48,7 +54,6 @@ const HomePage = () => {
                                 </h4>
                             </div>
                         </div>
-
                         <div className="service-card">
                             <div className="card-img-container">
                                 <img className='card-img' src="/images/TrickyQr.png" alt="QR_Code" />
@@ -62,6 +67,17 @@ const HomePage = () => {
                         </div>
                     </div>
                 </div>
+
+
+                <div className="about-section">
+                    <div className="about-box">
+                        <h1 className='about-heading'>Freedom From Boring Printed Business Cards</h1>
+                        <h4 className='about-subheading'>Design your digital visiting card in 2 minutes - it's easy, elegant and affordable. E-Visit Card is always in your pocket, never tears and never runs out. Your Digital Visiting Card can be easily updated with our user-friendly dashboard, so you won't need to re-print a business card again.</h4>
+                    </div>
+                </div>
+
+
+                <Contact />
                 <Footer />
             </div>
         </>

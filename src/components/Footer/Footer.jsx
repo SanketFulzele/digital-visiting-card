@@ -7,7 +7,9 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-box">
           <div className="footer-img-box">
+          <a href="https://www.trickysys.com/"  rel="noreferrer" target="_blank">
             <img className='footer-img' src="/images/trickyOne.png" alt="trickySys_Logo" />
+          </a>
           </div>
 
           <div className="footer-info">
